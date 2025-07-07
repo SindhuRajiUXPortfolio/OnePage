@@ -1,7 +1,65 @@
 
 <!DOCTYPE html>
 <html>
+  <head>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+.form-container {
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+  </head>
 <body>
+
+  
 
 
 <img src="SindhuRajiUxPortfolio-1.jpg" alt="Image" height="100%" width="100%" />
@@ -29,6 +87,23 @@
   <a href="https://sindhurajiuxportfolio.github.io/OnePage/InstabizICICI.html" target="_blank" style="padding: 0 100px; 
     font-size: 22px;font-family: monospace;color: #10295F;"><B>ICICI</B></a>
   </div>
+
+  <div class="form-container">
+    <h2>Request File Access</h2>
+    <form action="#" method="post">
+      <label for="name">Your Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Your Email</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message to the Owner</label>
+      <textarea id="message" name="message" rows="4" placeholder="Why do you need access?" required></textarea>
+
+      <button type="submit">Request Access</button>
+    </form>
+  </div>
+
   
   <img src="Thankyou.png" alt="Image" height="100%" width="100%" />
 
