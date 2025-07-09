@@ -25,49 +25,49 @@ body {
     
    <!-- Section Hide -->
    .form-container {
-      background-color: #ffffff;
+  /*    background-color: #ffffff;
       max-width: 600px;
       padding: 40px 80px;
       margin: 20px auto;
       border-radius: 12px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1); */
     }
 
     .form-container h2 {
-      text-align: center;
+     /* text-align: center;
       color: #333;
       margin-bottom: 25px;
-      font-weight: 600;
+      font-weight: 600; */
     }
 
     label {
-      display: block;
+   /*   display: block;
       margin: 16px 0 6px;
       font-weight: 600;
-      color: #444;
+      color: #444; */
     }
 
     input[type="text"],
     input[type="email"],
     textarea {
-      width: 100%;
+      /* width: 100%;
       padding: 12px 14px;
       border: 1px solid #ccc;
       border-radius: 8px;
       font-size: 15px;
       background-color: #fdfdfd;
-      transition: border 0.3s ease, box-shadow 0.3s ease;
+      transition: border 0.3s ease, box-shadow 0.3s ease; */
     }
 
     input:focus,
     textarea:focus {
-      border-color: #007BFF;
+    /*  border-color: #007BFF;
       box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
-      outline: none;
+      outline: none; */
     }
 
     button {
-      margin-top: 25px;
+  /*    margin-top: 25px;
       width: 100%;
       padding: 14px;
       background-color: #007BFF;
@@ -77,25 +77,91 @@ body {
       font-weight: 600;
       border-radius: 8px;
       cursor: pointer;
-      transition: background-color 0.3s ease, transform 0.2s ease;
+      transition: background-color 0.3s ease, transform 0.2s ease; */
     }
 
     button:hover {
-      background-color: #0056b3;
-      transform: translateY(-1px);
+   /*   background-color: #0056b3;
+      transform: translateY(-1px); */
     }
 
     @media (max-width: 100%) {
-      .form-container {
+  /*    .form-container {
         padding: 30px 20px;
       }
-    }
-  </style> 
+    }*/
+      
+   //
     <!-- Hide -->
 
-  
+    /* Password screen container */
+#password-screen {
+  background-color: #ffffff;
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.3s ease-in-out;
+}
 
-  <script src="script.js"></script>
+#password-screen h2 {
+  margin-bottom: 1.5rem;
+  color: #333;
+  font-size: 1.6rem;
+}
+
+/* Input styling */
+#password-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  margin-bottom: 1rem;
+  transition: border-color 0.2s;
+}
+
+#password-input:focus {
+  border-color: #007bff;
+}
+
+/* Button styling */
+button {
+  padding: 0.7rem 1.5rem;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Error message */
+#error-msg {
+  color: red;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Protected content styling */
+#protected-content {
+  padding: 2rem;
+  font-size: 1rem;
+  display: none;
+  color: #333;
+}
+
+  </style>
+
+  <script src="bootstrap.js"></script>
 
   </head>
 <body>
@@ -159,19 +225,7 @@ body {
     
 </div>
 
-<script type="text/javascript">
-const correctPassword = "secret123"; // 🔒 Change this to your desired password
 
-function checkPassword() {
-  const input = document.getElementById("password-input").value;
-  if (input === correctPassword) {
-    document.getElementById("password-screen").style.display = "none";
-    document.getElementById("protected-content").style.display = "block";
-  } else {
-    document.getElementById("error-msg").textContent = "Incorrect password. Try again.";
-  }
-}
-</script>
 
   
 </body>
