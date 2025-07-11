@@ -1,4 +1,4 @@
-<script type="text/javascript">
+
 const correctPassword = "secret123"; // 🔒 Change this to your desired password
 
 function checkPassword() {
@@ -10,4 +10,4 @@ function checkPassword() {
     document.getElementById("error-msg").textContent = "Incorrect password. Try again.";
   }
 }
-</script>
+
