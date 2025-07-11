@@ -1,5 +1,5 @@
 
-const correctPassword = "secret123"; // 🔒 Change this to your desired password
+const correctPassword = "UX2025"; // 🔒 Change this to your desired password
 
 function checkPassword() {
   const input = document.getElementById("password-input").value;
