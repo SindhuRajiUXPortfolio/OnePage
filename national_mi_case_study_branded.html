@@ -1,0 +1,333 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --blue:#00538a;
+  --blue-mid:#00467a;
+  --blue-dark:#003460;
+  --blue-light:#1a6a9e;
+  --accent:#e6b590;
+  --accent-dark:#c4874a;
+  --accent-pale:#faf0e6;
+  --white:#ffffff;
+  --black:#000000;
+  --text-on-blue:#ffffff;
+  --text-on-white:#000000;
+  --muted-on-blue:rgba(255,255,255,0.65);
+  --muted-on-white:rgba(0,0,0,0.5);
+  --border-on-blue:rgba(255,255,255,0.15);
+  --border-on-white:rgba(0,0,0,0.1);
+  --success-bg:#e6f4ee;
+  --success-text:#0a5c33;
+  --error-bg:#fdeaea;
+  --error-text:#8b1a1a;
+}
+body{font-family:'Lato',sans-serif;background:var(--blue);color:var(--text-on-blue);line-height:1.6;overflow-x:hidden}
+
+.hero{background:var(--blue);padding:52px 48px 44px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:360px;height:360px;border-radius:50%;border:1px solid rgba(230,181,144,0.12);pointer-events:none}
+.hero::after{content:'';position:absolute;top:-30px;right:-30px;width:220px;height:220px;border-radius:50%;border:1px solid rgba(230,181,144,0.07);pointer-events:none}
+.hero-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(230,181,144,0.15);color:var(--accent);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 13px;border-radius:20px;margin-bottom:20px;border:0.5px solid rgba(230,181,144,0.35)}
+.hero h1{font-family:'Lato',sans-serif;font-size:34px;font-weight:900;line-height:1.15;max-width:520px;margin-bottom:14px;color:var(--white)}
+.hero h1 em{font-style:italic;color:var(--accent);font-weight:900}
+.hero-sub{font-size:15px;color:var(--muted-on-blue);max-width:480px;line-height:1.75;margin-bottom:36px;font-weight:300}
+.hero-meta{display:flex;gap:0;flex-wrap:wrap;border:0.5px solid var(--border-on-blue);border-radius:10px;overflow:hidden}
+.meta-item{padding:14px 24px;border-right:0.5px solid var(--border-on-blue);flex:1;min-width:130px}
+.meta-item:last-child{border-right:none}
+.meta-label{font-size:10px;color:rgba(255,255,255,0.4);letter-spacing:0.09em;text-transform:uppercase;font-weight:700;margin-bottom:4px}
+.meta-val{font-size:13px;color:var(--white);font-weight:700}
+
+.section{padding:36px 48px;border-bottom:0.5px solid var(--border-on-blue)}
+.section:last-child{border-bottom:none}
+.section-tag{display:flex;align-items:center;gap:8px;font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.section-tag::before{content:'';display:block;width:20px;height:1px;background:var(--accent);opacity:0.6}
+h2{font-family:'Lato',sans-serif;font-size:22px;font-weight:900;margin-bottom:10px;line-height:1.25;color:var(--white)}
+.body-text{font-size:15px;color:var(--muted-on-blue);line-height:1.75;max-width:560px;font-weight:300}
+
+.challenge-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:22px}
+.challenge-card{background:rgba(255,255,255,0.06);border:0.5px solid rgba(230,181,144,0.25);border-radius:12px;padding:20px;position:relative;overflow:hidden}
+.challenge-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--accent)}
+.challenge-icon{width:34px;height:34px;background:rgba(230,181,144,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;border:0.5px solid rgba(230,181,144,0.3)}
+.challenge-icon i{color:var(--accent);font-size:17px}
+.challenge-title{font-size:13px;font-weight:700;color:var(--white);margin-bottom:5px}
+.challenge-desc{font-size:12px;color:var(--muted-on-blue);line-height:1.6}
+
+.process-steps{display:flex;flex-direction:column;gap:0;margin-top:22px}
+.step{display:flex;gap:18px;padding:18px 0;border-bottom:0.5px solid var(--border-on-blue)}
+.step:last-child{border-bottom:none;padding-bottom:0}
+.step-num{width:34px;height:34px;min-width:34px;border-radius:50%;background:var(--accent);color:var(--black);font-size:14px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.step-body{flex:1}
+.step-title{font-size:14px;font-weight:700;color:var(--white);margin-bottom:3px}
+.step-desc{font-size:13px;color:var(--muted-on-blue);line-height:1.65;font-weight:300}
+.step-badge{display:inline-flex;align-items:center;gap:5px;background:rgba(230,181,144,0.12);color:var(--accent);font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px;margin-top:7px;border:0.5px solid rgba(230,181,144,0.3);letter-spacing:0.05em;text-transform:uppercase}
+
+.ia-diagram{margin-top:22px;background:rgba(0,0,0,0.25);border-radius:14px;padding:26px;border:0.5px solid var(--border-on-blue)}
+.ia-label{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.35);margin-bottom:18px}
+.ia-sections{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ia-section{background:rgba(255,255,255,0.05);border:0.5px solid rgba(230,181,144,0.2);border-radius:10px;padding:14px}
+.ia-section-name{font-size:11px;font-weight:700;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:5px;text-transform:uppercase;letter-spacing:0.05em}
+.ia-section-name i{font-size:13px}
+.ia-field{font-size:11px;color:rgba(255,255,255,0.45);padding:4px 0;border-bottom:0.5px solid rgba(255,255,255,0.06);line-height:1.4;font-weight:300}
+.ia-field:last-child{border-bottom:none}
+
+.ba-pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:22px}
+.ba-card{border-radius:12px;padding:20px;border:0.5px solid var(--border-on-white)}
+.ba-before{background:var(--white)}
+.ba-after{background:#e8f5ef;border-color:rgba(10,92,51,0.2)}
+.ba-label{font-size:10px;font-weight:700;letter-spacing:0.09em;text-transform:uppercase;margin-bottom:12px;display:flex;align-items:center;gap:5px}
+.ba-before .ba-label{color:#b91c1c}
+.ba-after .ba-label{color:var(--success-text)}
+.ba-content{font-size:13px;line-height:1.7;color:var(--black)}
+.ba-after .ba-content{color:var(--black)}
+.field-label-old{font-weight:700;color:#111;font-size:13px}
+.field-label-new{font-weight:700;color:#111;font-size:13px}
+.tooltip-word{border-bottom:1.5px dashed var(--accent-dark);cursor:help;font-weight:700;color:#111}
+.ba-note{font-size:11px;color:var(--muted-on-white);margin-top:7px;font-weight:300}
+.msg-error{background:var(--error-bg);border:0.5px solid #f0a0a0;border-radius:6px;padding:9px 12px;font-size:12px;color:var(--error-text);margin-top:10px;display:flex;align-items:flex-start;gap:6px}
+.msg-success{background:var(--success-bg);border:0.5px solid #7ec8a0;border-radius:6px;padding:9px 12px;font-size:12px;color:var(--success-text);margin-top:10px;display:flex;align-items:flex-start;gap:6px}
+
+.collab-row{display:flex;gap:10px;margin-top:22px;flex-wrap:wrap}
+.collab-pill{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,0.07);border:0.5px solid var(--border-on-blue);border-radius:30px;padding:10px 18px}
+.collab-dot{width:28px;height:28px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.collab-dot i{font-size:13px;color:var(--black)}
+.collab-name{font-size:13px;font-weight:700;color:var(--white)}
+.collab-role{font-size:11px;color:var(--muted-on-blue);font-weight:300}
+
+.outcomes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.outcome-card{background:var(--white);border-radius:14px;padding:24px;text-align:center;border:0.5px solid rgba(0,0,0,0.08)}
+.outcome-num{font-size:30px;font-weight:900;color:var(--blue);font-family:'Lato',sans-serif;line-height:1;margin-bottom:4px}
+.outcome-arrow{color:var(--accent-dark);font-size:20px;display:block;margin-bottom:8px}
+.outcome-label{font-size:12px;color:var(--muted-on-white);line-height:1.55;font-weight:400}
+
+.takeaway{background:rgba(0,0,0,0.3);border-radius:14px;padding:32px;margin-top:0;border:0.5px solid var(--border-on-blue);position:relative;overflow:hidden}
+.takeaway::before{content:'\201C';position:absolute;top:-16px;left:20px;font-family:'Lato',sans-serif;font-size:130px;font-weight:900;color:rgba(230,181,144,0.1);line-height:1;pointer-events:none}
+.takeaway p{font-size:17px;font-style:italic;font-weight:300;color:rgba(255,255,255,0.92);line-height:1.65;max-width:500px;position:relative;z-index:1}
+.takeaway-attr{font-size:11px;color:rgba(230,181,144,0.6);margin-top:14px;font-style:normal;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;position:relative;z-index:1}
+
+.cta-row{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;border:none;font-family:'Lato',sans-serif;letter-spacing:0.02em;transition:opacity 0.15s}
+.btn-primary{background:var(--accent);color:var(--black)}
+.btn-primary:hover{opacity:0.88}
+.btn-outline{background:transparent;color:var(--white);border:0.5px solid rgba(255,255,255,0.3)}
+.btn-outline:hover{background:rgba(255,255,255,0.08)}
+</style>
+
+<div class="hero">
+  <div class="hero-tag"><i class="ti ti-file-text" aria-hidden="true"></i> Case Study</div>
+  <h1>Simplifying <em>mortgage insurance</em><br>for everyone in the room</h1>
+  <p class="hero-sub">A content design overhaul that turned a technically dense lender platform into a confident, accessible experience — for both users and the business.</p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <div class="meta-label">Company</div>
+      <div class="meta-val">National MI</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Role</div>
+      <div class="meta-val">Content Designer</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Domain</div>
+      <div class="meta-val">Mortgage Insurance Platform</div>
+    </div>
+    <div class="meta-item">
+      <div class="meta-label">Discipline</div>
+      <div class="meta-val">Content Design · IA · UX Writing</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-tag">The challenge</div>
+  <h2>Users were lost in complexity they shouldn't have to navigate</h2>
+  <p class="body-text">The platform helped lenders determine eligibility and calculate mortgage insurance premiums — high-stakes decisions with real regulatory weight. Research revealed three consistent friction points.</p>
+  <div class="challenge-grid">
+    <div class="challenge-card">
+      <div class="challenge-icon"><i class="ti ti-vocabulary" aria-hidden="true"></i></div>
+      <div class="challenge-title">Opaque terminology</div>
+      <div class="challenge-desc">Technical mortgage jargon appeared without context, alienating users who weren't specialists in MI.</div>
+    </div>
+    <div class="challenge-card">
+      <div class="challenge-icon"><i class="ti ti-forms" aria-hidden="true"></i></div>
+      <div class="challenge-title">Dense, unstructured forms</div>
+      <div class="challenge-desc">Long forms with no logical grouping forced users to hunt for fields and lose their place mid-task.</div>
+    </div>
+    <div class="challenge-card">
+      <div class="challenge-icon"><i class="ti ti-alert-circle" aria-hidden="true"></i></div>
+      <div class="challenge-title">Unhelpful error messages</div>
+      <div class="challenge-desc">Errors appeared without context or a clear path forward, stalling users at critical points in the flow.</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-tag">The process</div>
+  <h2>Research-led, systematically restructured</h2>
+  <div class="process-steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Content audit & user interviews</div>
+        <div class="step-desc">Catalogued all in-product language and ran structured interviews to surface where users hesitated, guessed, or gave up entirely.</div>
+        <span class="step-badge"><i class="ti ti-search" aria-hidden="true"></i> Discovery</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Restructured information architecture</div>
+        <div class="step-desc">Reorganised the form into four logical sections matching users' mental models — Borrower Details, Loan Information, Insurance Selection, and Quote Summary.</div>
+        <span class="step-badge"><i class="ti ti-layout" aria-hidden="true"></i> IA Design</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Simplified financial terminology</div>
+        <div class="step-desc">Rewrote jargon-heavy labels into plain language, with contextual help text and tooltips for terms requiring deeper explanation.</div>
+        <span class="step-badge"><i class="ti ti-pencil" aria-hidden="true"></i> UX Writing</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Redesigned error messages</div>
+        <div class="step-desc">Replaced vague system errors with specific, actionable messages — what went wrong, why, and exactly how to fix it.</div>
+        <span class="step-badge"><i class="ti ti-message" aria-hidden="true"></i> Error Design</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-tag">Information architecture</div>
+  <h2>From one overwhelming form to four logical sections</h2>
+  <p class="body-text">The restructured IA mirrors how a lender actually thinks through a mortgage insurance application — progressively building toward a quote.</p>
+  <div class="ia-diagram">
+    <div class="ia-label">Restructured form IA</div>
+    <div class="ia-sections">
+      <div class="ia-section">
+        <div class="ia-section-name"><i class="ti ti-user" aria-hidden="true"></i> Borrower Details</div>
+        <div class="ia-field">Full legal name</div>
+        <div class="ia-field">Date of birth</div>
+        <div class="ia-field">Credit score range</div>
+        <div class="ia-field">Employment status</div>
+        <div class="ia-field">Income type</div>
+      </div>
+      <div class="ia-section">
+        <div class="ia-section-name"><i class="ti ti-home" aria-hidden="true"></i> Loan Information</div>
+        <div class="ia-field">Loan amount</div>
+        <div class="ia-field">Property value</div>
+        <div class="ia-field">LTV ratio</div>
+        <div class="ia-field">Loan purpose</div>
+        <div class="ia-field">Amortization term</div>
+      </div>
+      <div class="ia-section">
+        <div class="ia-section-name"><i class="ti ti-shield" aria-hidden="true"></i> Insurance Selection</div>
+        <div class="ia-field">Coverage level</div>
+        <div class="ia-field">Premium structure</div>
+        <div class="ia-field">Payment plan</div>
+        <div class="ia-field">Eligibility check</div>
+        <div class="ia-field">Policy type</div>
+      </div>
+      <div class="ia-section">
+        <div class="ia-section-name"><i class="ti ti-report" aria-hidden="true"></i> Quote Summary</div>
+        <div class="ia-field">Premium calculation</div>
+        <div class="ia-field">Monthly cost</div>
+        <div class="ia-field">Coverage details</div>
+        <div class="ia-field">Regulatory notes</div>
+        <div class="ia-field">Download / submit</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-tag">Content design</div>
+  <h2>Language that builds confidence, not confusion</h2>
+  <p class="body-text">Two areas where content design had the highest visible impact: terminology and error messages.</p>
+  <div class="ba-pair">
+    <div class="ba-card ba-before">
+      <div class="ba-label"><i class="ti ti-x" aria-hidden="true"></i> Before</div>
+      <div class="ba-content">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:var(--muted-on-white);font-weight:700;margin-bottom:5px">Field label</div>
+        <div class="field-label-old">LLPA / MI Premium Rate Factor (bps)</div>
+        <div class="ba-note">No explanation. No tooltip. Users guessed or called support.</div>
+        <div class="msg-error"><i class="ti ti-alert-circle" style="font-size:15px;margin-top:1px;flex-shrink:0" aria-hidden="true"></i> Error 422: Invalid input parameters.</div>
+      </div>
+    </div>
+    <div class="ba-card ba-after">
+      <div class="ba-label"><i class="ti ti-check" aria-hidden="true"></i> After</div>
+      <div class="ba-content">
+        <div style="font-size:10px;text-transform:uppercase;letter-spacing:0.07em;color:var(--success-text);font-weight:700;margin-bottom:5px">Field label</div>
+        <div class="field-label-new">Monthly MI premium rate <span class="tooltip-word" title="Annual MI rate per $100 of loan value ÷ 12">(?)</span></div>
+        <div class="ba-note">Tooltip provides technical detail on demand. Plain label by default.</div>
+        <div class="msg-success"><i class="ti ti-info-circle" style="font-size:15px;margin-top:1px;flex-shrink:0" aria-hidden="true"></i> The LTV ratio is above 95%. Lower the loan amount or increase the down payment to continue.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-tag">Collaboration</div>
+  <h2>Balancing regulatory accuracy with usability</h2>
+  <p class="body-text">Close cross-functional partnership was essential to ensure simplified language never sacrificed compliance or technical precision.</p>
+  <div class="collab-row">
+    <div class="collab-pill">
+      <div class="collab-dot"><i class="ti ti-chart-dots" aria-hidden="true"></i></div>
+      <div>
+        <div class="collab-name">Underwriting SMEs</div>
+        <div class="collab-role">Regulatory accuracy review</div>
+      </div>
+    </div>
+    <div class="collab-pill">
+      <div class="collab-dot"><i class="ti ti-clipboard-list" aria-hidden="true"></i></div>
+      <div>
+        <div class="collab-name">Product Managers</div>
+        <div class="collab-role">Scope & business alignment</div>
+      </div>
+    </div>
+    <div class="collab-pill">
+      <div class="collab-dot"><i class="ti ti-code" aria-hidden="true"></i></div>
+      <div>
+        <div class="collab-name">Developers</div>
+        <div class="collab-role">Implementation & error handling</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-tag">Outcomes</div>
+  <h2>Measurable confidence. Measurable results.</h2>
+  <div class="outcomes-grid">
+    <div class="outcome-card">
+      <span class="outcome-arrow"><i class="ti ti-trending-up" aria-hidden="true"></i></span>
+      <div class="outcome-num" style="color:var(--blue)">Task completion</div>
+      <div class="outcome-label">Completion rates improved across the quote-generation flow</div>
+    </div>
+    <div class="outcome-card">
+      <span class="outcome-arrow"><i class="ti ti-trending-down" aria-hidden="true"></i></span>
+      <div class="outcome-num" style="color:var(--blue)">Fewer errors</div>
+      <div class="outcome-label">Quote-generation errors decreased with clearer field guidance</div>
+    </div>
+    <div class="outcome-card">
+      <span class="outcome-arrow"><i class="ti ti-mood-happy" aria-hidden="true"></i></span>
+      <div class="outcome-num" style="color:var(--blue)">User confidence</div>
+      <div class="outcome-label">Users reported greater confidence completing premium calculations</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="section-tag">The takeaway</div>
+  <div class="takeaway">
+    <p>Effective content design can simplify complex financial experiences while supporting both user and business goals — without sacrificing accuracy or regulatory integrity.</p>
+    <div class="takeaway-attr">— National MI · Mortgage Insurance Platform</div>
+  </div>
+  <div class="cta-row">
+    <button class="btn btn-primary" onclick="sendPrompt('Tell me more about the content audit process used in the National MI project')"><i class="ti ti-search" aria-hidden="true"></i> Explore the research process ↗</button>
+    <button class="btn btn-outline" onclick="sendPrompt('What were the biggest content design decisions made in the National MI mortgage platform project?')"><i class="ti ti-bulb" aria-hidden="true"></i> Key design decisions ↗</button>
+  </div>
+</div>
